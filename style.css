@@ -1,0 +1,231 @@
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+:root {
+    --primary-green: #2f7a59;
+    --light-green: #daf3e4;
+    --accent-gold: #c9a646;
+    --text-dark: #1f2d3d;
+    --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SolaimanLipi', sans-serif;
+    background: linear-gradient(135deg, #f6fff9 0%, #e6f7ef 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+header.bauet-header {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 3px solid var(--accent-gold);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+}
+
+header .logo {
+    max-height: 80px;
+}
+
+header .title-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+.step-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 22px;
+    box-shadow: 0 25px 45px -20px var(--card-shadow);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    background: var(--light-green);
+    border-radius: 50%;
+    opacity: 0.35;
+}
+
+.step-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 180px;
+    height: 180px;
+    background: rgba(201, 166, 70, 0.12);
+    border-radius: 50%;
+}
+
+.progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.progress-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #dce7e1;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.progress-step {
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 3px solid #dce7e1;
+    color: #9aa4a0;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active,
+.progress-step.completed {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.progress-step.completed {
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.form-step {
+    display: none;
+    animation: slideIn 0.5s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--primary-green);
+}
+
+input, textarea {
+    border-radius: 14px !important;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d7e4db;
+    font-size: 1.05rem;
+    background: #f9fffb;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 0.25rem rgba(47, 122, 89, 0.15);
+}
+
+.bangla-text {
+    font-family: 'SolaimanLipi', sans-serif;
+}
+
+.english-text {
+    font-family: 'Times New Roman', serif;
+}
+
+.btn-soft {
+    border-radius: 30px;
+    padding: 0.65rem 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-soft:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -15px rgba(47, 122, 89, 0.5);
+}
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 22px;
+    border: 1px solid rgba(47, 122, 89, 0.15);
+    padding: 1.5rem;
+    box-shadow: 0 22px 40px -24px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card img {
+    border-radius: 18px;
+    max-width: 180px;
+    border: 4px solid rgba(47, 122, 89, 0.25);
+}
+
+.footer-credit {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    color: #4d5a54;
+}
+
+@media (max-width: 576px) {
+    header .title-text {
+        font-size: 1.1rem;
+    }
+
+    .step-card {
+        padding: 1.5rem;
+    }
+
+    .progress-step {
+        width: 44px;
+        height: 44px;
+    }
+
+    .progress-labels {
+        font-size: 0.75rem;
+    }
+}
